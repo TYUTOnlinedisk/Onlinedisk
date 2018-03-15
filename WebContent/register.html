@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+
+  <title>我的网盘</title>
+
+  <link href="css/uikitplay.css" media="all" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  <div class="uk-container uk-container-center">
+    <div class="uk-grid">
+      <div class="uk-width-medium-1-1 uk-width-large-1-1 uk-width-small-1-1">
+        <div class="uk-container-center uk-width-medium-2-5 uk-width-large-3-10 uk-width-small-3-5">
+          <div class="uk-panel uk-panel-box" style="margin-top: 50px;">
+            <h1 class="uk-panel-title uk-text-center uk-text-uppercase">注册</h1>
+            <form action="Register" class="uk-form" method="post" accept-charset="utf-8">
+              <div class="uk-form-row">
+                                <input class="uk-width-1-1" name="user" placeholder="用户名" type="text" onblur="return verifyName()" onfocus="delData()">
+              </div>
+              <div class="uk-form-row" id="accDiv"></div>
+              <div class="uk-form-row">
+                                <input class="uk-width-1-1" name="email" placeholder="邮箱" type="text" onblur="formatEmail()" onfocus="delEmail()">
+              </div>
+              <div class="uk-form-row" id="emailDiv"></div>
+              <div class="uk-form-row">
+                                <input class="uk-width-1-1" name="password" value="" autocomplete="off" placeholder="密码" type="password" onblur="formatPwd()" onfocus="delPwd()" >
+              </div>
+              <div class="uk-form-row" id="pwdDiv"></div>
+              <div class="uk-form-row">
+                                <input class="uk-width-1-1" name="passwordCF" value="" autocomplete="off" placeholder="密码确认" type="password" onblur="return verifyPwd()" onfocus="delCFPwd()">
+              </div>
+              <div class="uk-form-row" id="pwdCFDiv"></div>
+              <div class="uk-form-row">
+                <button class="uk-button uk-width-1-1 uk-text-bold uk-text-uppercase bg-blue text-white" type="submit" name="submit" value="submit" >确定</button>
+              </div>
+            </form>          
+           </div>
+          <div class="uk-text-center uk-text-uppercase uk-text-small uk-text-bold uk-margin-small-top text-grey-600"><a href="login.html">登录</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/jquery.js"></script>
+  <script type="text/javascript">
+    function verifyName(){  
+    		var s=$('[name="user"]').val();
+  			var reg=/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/;   
+  			if (!reg.test(s)) {
+  				$("#accDiv").html("用户名长度5-20，以字母开头、可带数字、“_”、“.”");
+  				$("#accDiv").css("color","red");
+  				return false;
+  			}
+            $.ajax({
+                type:"GET",
+                url:"AjaxUserNameVerify",
+                async:true,
+                data:"username="+$('[name="user"]').val(),
+                success:function(msg)
+                    {   
+                        $("#accDiv").html(""+msg);
+                        $("#accDiv").css("color","red");
+                    },
+              error:function()
+                   {
+            	  		$("#accDiv").html("资源请求失败 ");
+                        //错误处理
+                   }
+                });
+            return true;
+     }
+  	function formatPwd(){
+    	var s=$('[name="password"]').val();
+    	var reg=/^(\w){6,20}$/;
+    	if(!reg.test(s)){
+    		$("#pwdDiv").html("只能输入6-20个字母、数字、下划线");
+    		$("#pwdDiv").css("color","red");
+    		$('[name="password"]').val("");
+    	}	
+  	}
+    function verifyPwd(){ 
+		if($('[name="password"]').val() != $('[name="passwordCF"]').val()){
+		//alert("两次密码不一致！");
+		$("#pwdCFDiv").html("两次密码不一致!");
+		$("#pwdCFDiv").css("color","red");
+        $('[name="password"]').val("");
+        $('[name="passwordCF"]').val("");
+		//document.getElementById(totext).value="";
+		//return false;
+		}
+	return true;
+	}
+  	function formatEmail(){
+  		var s=$('[name="email"]').val();
+    	var reg=/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    	if(!reg.test(s)){
+    		$("#emailDiv").html("只能输入6-20个字母、数字、下划线");
+    		$("#emailDiv").css("color","red");
+    	}
+  	}
+    function delData(){
+        //document.getElementById("account").value = "";
+        $('[name="user"]').val("");
+        //document.getElementById("accDiv").innerHTML = "";
+        $("#accDiv").html("");    	
+    }
+  	function delPwd(){
+        $('[name="password"]').val("");
+        $("#pwdDiv").html(""); 
+  	}
+	function delCFPwd(){
+        $('[name="passwordCF"]').val("");
+        $("#pwdCFDiv").html(""); 
+	}
+	function delEmail(){
+        $('[name="email"]').val("");
+        $("#emailDiv").html(""); 		
+	}
+  </script>
+</body></html>

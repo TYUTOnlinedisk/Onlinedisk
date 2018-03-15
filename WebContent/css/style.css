@@ -1,0 +1,66 @@
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	BACKGROUND: #ffffff; FONT-SIZE: 12px
+}
+#header {
+	MARGIN: 0px auto
+}
+A {
+	COLOR: #234467; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #234467; TEXT-DECORATION: underline
+}
+A IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.banner1 {
+	TEXT-ALIGN: left; BORDER-LEFT: #bac1c7 1px solid; BACKGROUND: url(../images/t_bg02.jpg) repeat-x; HEIGHT: 25px; COLOR: black; FONT-SIZE: 12px; BORDER-TOP: #bac1c7 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #bac1c7 1px solid
+}
+.banner1 DIV {
+	PADDING-LEFT: 25px; BACKGROUND: url(../images/show.jpg) no-repeat 8px 6px; CURSOR: pointer; PADDING-TOP: 7px
+}
+.banner1 .hide {
+	BACKGROUND: url(../images/hide.jpg) no-repeat 8px 6px
+}
+.banner1 .show {
+	BACKGROUND: url(../images/show.jpg) no-repeat 8px 6px
+}
+.query_content {
+	PADDING-BOTTOM: 10px; BACKGROUND: url(../images/edit_content_bg.gif) repeat-x 50% top; BORDER-TOP: #bac1c7 1px solid
+}
+SELECT {
+	WIDTH: 60px; FONT-SIZE: 12px
+}
+TEXTAREA {
+	WIDTH: 90%; HEIGHT: 50px
+}
+BUTTON {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; MARGIN: 6px 6px 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(../images/button2.gif) repeat-x center 50%; HEIGHT: 24px; COLOR: #333333; FONT-SIZE: 12px; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none; PADDING-TOP: 3px
+}
+.btn2 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 66px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button2.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+.btn3 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 80px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button3.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+.btn4 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 90px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button4.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+.btn5 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 100px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button5.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+.btn6 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 110px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button6.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+.btn7 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 120px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images/button7.gif) no-repeat center 50%; BORDER-LEFT-STYLE: none
+}
+LABEL.must {
+	PADDING-LEFT: 9px; BACKGROUND: url(../images/must.gif) no-repeat left center
+}
+.info {
+	COLOR: red; MARGIN-LEFT: 10px; FONT-WEIGHT: normal
+}
